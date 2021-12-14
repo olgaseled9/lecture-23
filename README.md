@@ -5,7 +5,7 @@
 3. create simple component with 2 methods
    3.1 1 method without parameters
    3.2 2 method with 3 parameters
-4. crearte asspect (use @Aspect annotations)
+4. crearte asspect (use @Aspect annotations) (Logging.class)
 5. add aspects to 2 methods of component #3
 6. get component from spring context and call methods
 
