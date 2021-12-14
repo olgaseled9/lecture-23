@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Aspect
-public class Logging {
+public class LogAspect {
 
-    private static final Logger logger = LoggerFactory.getLogger(Logging.class);
+    private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
     @Pointcut("execution(*  by.itacademy.javaenterprise.seledtsova.*.*(..))")
     private void selectAll() {
@@ -16,12 +16,12 @@ public class Logging {
 
     @Before("selectAll()")
     public void beforeAdvice() {
-        logger.info("Now we are going to initiate student's profile.");
+        logger.info("Now we are going to create  student's profile.");
     }
 
     @After("selectAll()")
     public void afterAdvice() {
-        logger.info("Student's profile has been launched.");
+        logger.info("Student's profile has been created.");
     }
 
     @AfterReturning(pointcut = "selectAll()", returning = "someValue")
@@ -34,21 +34,25 @@ public class Logging {
         logger.info("Here we have an exception: " + e.toString());
     }
 
-    @Pointcut("execution(public String by.itacademy.javaenterprise.seledtsova.Student.methodWithThreeParameters(String, String, Integer))")
+    @Pointcut("execution(public String by.itacademy.javaenterprise.seledtsova.Student.methodAboutStudentEducation(String, String, Integer))")
     public void methodWithParameters() {
     }
 
     @Around("methodWithParameters()")
-    public void aroundMethodWithArguments(ProceedingJoinPoint joinPoint) {
+    public Object aroundMethodExecution(ProceedingJoinPoint joinPoint) {
         try {
-            logger.info("Start");
-            logger.info("Begin time: " + System.currentTimeMillis());
-            String result = (String) joinPoint.proceed();
-            logger.info("Finish time: " + System.currentTimeMillis());
-            logger.info("Status: " + result);
-        } catch (Throwable throwable) {
+            long start = System.currentTimeMillis();
+            Object res = joinPoint.proceed();
+            long end = System.currentTimeMillis();
+            logger.info("Execution of method " + joinPoint.getSignature()
+                    + " took " + (end - start) + " msec.");
+            return res;
+        } catch (
+                Throwable throwable) {
             logger.error(throwable.toString());
         }
+        return null;
     }
 }
+
 

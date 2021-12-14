@@ -12,12 +12,15 @@ public class Runner {
 
     public static void main(String[] args) {
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("spring-student-config.xml");
-        Student student = (Student) context.getBean("student");
-        logger.info("{}", student);
-        student.throwSomeException();
-        student.methodWithThreeParameters("Finance and credit","Economist",3);
+                new ClassPathXmlApplicationContext("spring-aop-config.xml");
+        Student student1 = (Student) context.getBean("studentFirst");
+        logger.info("{}", student1);
+        student1.methodAboutStudentEducation(" 'finance and credit' ", " 'economist' ", 3);
+        Student student2 = (Student) context.getBean("studentSecond");
+        logger.info("{}", student2);
+        student2.methodAboutStudentEducation(" 'marketing' ", " 'marketer-economist' ", 1);
 
+        student2.throwSomeException();
 
     }
 }

@@ -20,12 +20,12 @@ public class Student {
     private String faculty;
 
     public void throwSomeException() {
-        logger.error("Exception raised:");
+        logger.error("Exception raised: ");
         throw new IllegalArgumentException();
     }
 
-    public String methodWithThreeParameters(String speciality, String qualification, Integer course) {
-        return "The student has " + speciality + " "+qualification+ " " +
-                "is studying at "+ course;
+    public String methodAboutStudentEducation(String speciality, String qualification, Integer course) {
+        return "The student has " + speciality + " speciality, " + qualification + " qualification  " +
+                ", and now  is studying at " + course + " course.";
     }
 }

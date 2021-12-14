@@ -9,13 +9,17 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean id="student" class="by.itacademy.javaenterprise.seledtsova.Student">
+    <bean id="studentFirst" class="by.itacademy.javaenterprise.seledtsova.Student">
         <constructor-arg index="0" value="Petrov"/>
         <constructor-arg index="1" value="Belarusian State University"/>
-        <constructor-arg index="2" value="Faculty of Economics"/>
+        <constructor-arg index="2" value="Faculty of economics"/>
+    </bean>
+    <bean id="studentSecond" class="by.itacademy.javaenterprise.seledtsova.Student">
+        <constructor-arg index="0" value="Ivanov"/>
+        <constructor-arg index="1" value="Belarusian National Technical University"/>
+        <constructor-arg index="2" value="Faculty of marketing, management, entrepreneurship"/>
     </bean>
 
-    <bean id="logging" class="by.itacademy.javaenterprise.seledtsova.Logging"/>
-
+    <bean id="logging" class="by.itacademy.javaenterprise.seledtsova.LogAspect"/>
 </beans>
 
