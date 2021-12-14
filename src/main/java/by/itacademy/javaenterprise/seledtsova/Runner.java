@@ -15,7 +15,10 @@ public class Runner {
                 new ClassPathXmlApplicationContext("spring-student-config.xml");
         Student student = (Student) context.getBean("student");
         logger.info("{}", student);
-        student.throwSomeMysticException();
+        student.throwSomeException();
+        student.methodWithThreeParameters("Finance and credit","Economist",3);
+
+
     }
 }
 

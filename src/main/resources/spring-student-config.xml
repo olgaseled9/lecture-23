@@ -13,7 +13,6 @@
         <constructor-arg index="0" value="Petrov"/>
         <constructor-arg index="1" value="Belarusian State University"/>
         <constructor-arg index="2" value="Faculty of Economics"/>
-        <constructor-arg index="3" value="3"/>
     </bean>
 
     <bean id="logging" class="by.itacademy.javaenterprise.seledtsova.Logging"/>
