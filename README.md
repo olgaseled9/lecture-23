@@ -21,7 +21,8 @@
 8. Spring
 
 # How to use? 
-1. Run Runner.class.
+1. mvn clean install
+2. Run Runner.class.
 
 
 
