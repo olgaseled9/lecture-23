@@ -1,13 +1,13 @@
-# Home task #21
+# Home task #23
 
-1. git repo + readme
-2. console java application (not war)
+1. git repo + readme 
+2. console java application 
 3. create simple component with 2 methods
    3.1 1 method without parameters
    3.2 2 method with 3 parameters
-4. crearte asspect (use @Aspect annotations)
-5. add aspects to 2 methods of component #3
-6. get component from spring context and call methods
+4. create aspect (use @Aspect annotations) 
+5. add aspects to 2 methods of component #3 
+6. get component from spring context and call methods 
 
 # Technologies
 
@@ -19,6 +19,10 @@
 6. Hibernate
 7. Slf4j+logback Lombok
 8. Spring
+
+# How to use? 
+1. mvn clean install
+2. Run Runner.class.
 
 
 
